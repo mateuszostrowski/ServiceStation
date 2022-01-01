@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface JSONFileConverter {
     List<Car> fileToObject(String filePath);
-    Gson objectToJSON(List<Car> cars);
+    Gson objectToJSON(List<Car> cars, String filePath);
 }
