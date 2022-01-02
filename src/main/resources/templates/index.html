@@ -12,7 +12,9 @@
 </head>
 <body>
 <div id="mainContainer">
-<h1 id="appName" th:text="#{app.name}"></h1>
+    <h1 id="appName" th:text="#{app.name}"></h1>
+    <div th:insert="menu.html :: menuBar"></div>
+
 </div>
 </body>
 </html>

@@ -7,3 +7,11 @@
     margin: auto;
     background-color: #545b62;
 }
+
+ul li {
+    display: inline;
+}
+
+ul li:last-child {
+    margin-right: 0;
+}

@@ -8,13 +8,17 @@
     <link rel="stylesheet" th:href="@{/bootstrap.css}">
     <link rel="stylesheet" th:href="@{/awsm_big-stone.css}">
     <link rel="stylesheet" th:href="@{/additional_styles.css}">
-    <title th:text="#{app.name}"></title>
+    <title th:text="#{app.menu}"></title>
 </head>
 <body>
-<div id="mainContainer">
-    <h1 id="appName" th:text="#{app.name}"></h1>
-    <div th:insert="menu.html :: menuBar"></div>
-
+<div th:fragment="menuBar">
+    <div id="mainContainer">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item" th:each="menuObject : ${menuObjects}">
+                <a class="nav-link active" th:text="${menuObject.name}" th:href="${menuObject.landingPage}"></a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
