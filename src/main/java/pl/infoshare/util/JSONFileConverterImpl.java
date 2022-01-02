@@ -1,6 +1,7 @@
 package pl.infoshare.util;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import org.springframework.stereotype.Component;
 import pl.infoshare.model.Car;
@@ -30,9 +31,9 @@ public class JSONFileConverterImpl implements JSONFileConverter {
 
     @Override
     public Gson objectToJSON(List<Car> cars, String filePath) {
-        Gson gson = new Gson();
-        try {
-            gson.toJson(cars, new FileWriter(filePath));
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter(filePath)) {
+            gson.toJson(cars, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }

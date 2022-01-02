@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ServiceStationWebApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ServiceStationWebApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceStationWebApplication.class, args);
+    }
 }
