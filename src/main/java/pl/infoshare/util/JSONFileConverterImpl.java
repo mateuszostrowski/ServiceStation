@@ -2,6 +2,7 @@ package pl.infoshare.util;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import org.springframework.stereotype.Component;
 import pl.infoshare.model.Car;
 
 import java.io.FileNotFoundException;
@@ -11,7 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JSONFileConverterImpl implements JSONFileConverter {
+
     @Override
     public List<Car> fileToObject(String filePath) {
         Gson gson = new Gson();
