@@ -1,0 +1,9 @@
+#appName {
+    text-align: center;
+}
+
+#mainContainer {
+    max-width: 720px;
+    margin: auto;
+    background-color: #545b62;
+}
