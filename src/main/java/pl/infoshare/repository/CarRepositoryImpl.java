@@ -13,8 +13,8 @@ import java.util.stream.Stream;
 @Repository
 public class CarRepositoryImpl implements CarRepository {
 
-    private static final String CARS_TO_FIX_FILEPATH = "temp";
-    private static final String CARS_FIXED_FILEPATH = "temp";
+    private static final String CARS_TO_FIX_FILEPATH = "src/main/resources/jsons/carsToFix.json";
+    private static final String CARS_FIXED_FILEPATH = "src/main/resources/jsons/carsFixed.json";
 
     private final JSONFileConverterImpl converter;
 
