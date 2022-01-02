@@ -14,7 +14,50 @@
 <div id="mainContainer">
     <h1 id="appName" th:text="#{app.name}"></h1>
     <div th:insert="menu.html :: menuBar"></div>
+    <div id="addCarForm">
+        <form th:action="@{/index.html}" th:object="${car}" method="post">
+            <div class="container">
 
+                <div class="row">
+                    <div class="col">
+                        <label th:for="registrationNumber" th:text="#{car.registrationNumber}"></label>
+                    </div>
+                    <div class="col">
+                        <label th:for="name" th:text="#{car.name}"></label>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <input type="text" th:id="registrationNumber" th:field="*{registrationNumber}">
+                    </div>
+                    <div class="col">
+                        <input type="text" th:id="name" th:field="*{name}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label th:for="color" th:text="#{car.color}"></label>
+                    </div>
+                    <div class="col">
+                        <label th:for="yearOfProduction" th:text="#{car.yearOfProduction}"></label>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <select>
+                            <option th:each="clr : ${T(pl.infoshare.model.Color).values()}"
+                                    th:value="${clr.name()}"
+                                    th:text="${clr.description}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="text" th:id="yearOfProduction" th:field="*{yearOfProduction}">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>

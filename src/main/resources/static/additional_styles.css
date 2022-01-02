@@ -6,12 +6,23 @@
     max-width: 720px;
     margin: auto;
     background-color: #545b62;
+    padding-bottom: 10px;
 }
 
-ul li {
-    display: inline;
+#addCarForm {
+    margin: 5px 30px 5px 30px;
+    border: #99c0c9 solid 1px;
 }
 
-ul li:last-child {
-    margin-right: 0;
+label {
+    padding-top: 5px;
+}
+
+.col {
+    text-align: center;
+}
+
+.col select {
+    margin: auto;
+    width: inherit;
 }
