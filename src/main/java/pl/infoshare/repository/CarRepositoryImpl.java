@@ -41,8 +41,11 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
     @Override
-    public void save(List<Car> cars, String filePath) {
-        converter.objectToJSON(cars, filePath);
+    public void save(Car car) {
+        car.setId(1);
+        List<Car> cars = getAllToFix();
+        cars.add(car);
+        converter.objectToJSON(cars, CARS_TO_FIX_FILEPATH);
     }
 
     @Override

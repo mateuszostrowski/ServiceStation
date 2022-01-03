@@ -13,6 +13,9 @@
 <body>
 <div th:fragment="menuBar">
     <div id="mainContainer">
+        <a th:href="@{/}">
+            <h1 id="appName" th:text="#{app.name}"></h1>
+        </a>
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item" th:each="menuObject : ${menuObjects}">
                 <a class="nav-link active" th:text="${menuObject.name}" th:href="${menuObject.landingPage}"></a>

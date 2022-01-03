@@ -1,5 +1,6 @@
 #appName {
     text-align: center;
+    color: #99c0c9;
 }
 
 #mainContainer {
@@ -12,6 +13,7 @@
 #addCarForm {
     margin: 5px 30px 5px 30px;
     border: #99c0c9 solid 1px;
+    padding-bottom: 10px;
 }
 
 label {
@@ -25,4 +27,9 @@ label {
 .col select {
     margin: auto;
     width: inherit;
+}
+
+#successInfo {
+    text-align: center;
+    color: #1e7e34;
 }

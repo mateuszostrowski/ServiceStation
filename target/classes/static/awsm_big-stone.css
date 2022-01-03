@@ -385,7 +385,7 @@ legend{
     color:#145e86;
 }
 
-button{
+/*button{
     outline:none;
     box-sizing:border-box;
     height:2em;
@@ -415,7 +415,7 @@ button:active{
 button[disabled]{
     color:#145e86;
     cursor:not-allowed;
-}
+}*/
 
 select{
     outline:none;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,9 @@
 </head>
 <body>
 <div id="mainContainer">
-    <h1 id="appName" th:text="#{app.name}"></h1>
     <div th:insert="menu.html :: menuBar"></div>
     <div id="addCarForm">
-        <form th:action="@{/index.html}" th:object="${car}" method="post">
+        <form th:action="@{/index}" th:object="${car}" method="post">
             <div class="container">
 
                 <div class="row">
@@ -27,10 +26,10 @@
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
-                        <input type="text" th:id="registrationNumber" th:field="*{registrationNumber}">
+                        <input type="text" th:id="registrationNumber" th:field="*{registrationNumber}"/>
                     </div>
                     <div class="col">
-                        <input type="text" th:id="name" th:field="*{name}">
+                        <input type="text" th:id="name" th:field="*{name}"/>
                     </div>
                 </div>
 
@@ -43,7 +42,7 @@
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
-                        <select>
+                        <select th:id = "color" th:field="*{color}">
                             <option th:each="clr : ${T(pl.infoshare.model.Color).values()}"
                                     th:value="${clr.name()}"
                                     th:text="${clr.description}">
@@ -51,7 +50,16 @@
                         </select>
                     </div>
                     <div class="col">
-                        <input type="text" th:id="yearOfProduction" th:field="*{yearOfProduction}">
+                        <input type="text" th:id="yearOfProduction" th:field="*{yearOfProduction}"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button th:name="submit" type="submit" class="btn btn-outline-success" th:text="#{button.submit}"></button>
+                    </div>
+                    <div class="col">
+                        <button th:name="cancel" type="reset" class="btn btn-outline-danger" th:text="#{button.cancel}"></button>
                     </div>
                 </div>
 

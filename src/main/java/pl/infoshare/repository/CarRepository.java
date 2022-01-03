@@ -9,6 +9,6 @@ public interface CarRepository {
     List<Car> getAll();
     List<Car> getAllToFix();
     List<Car> getAllFixed();
-    void save(List<Car> cars, String filePath);
+    void save(Car car);
     Optional<Car> get(int id);
 }
