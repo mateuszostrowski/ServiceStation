@@ -31,7 +31,7 @@ public class CarController {
         return "index";
     }
 
-    @PostMapping(value = "/", params = "submit")
+    @PostMapping(value = "/add-car")
     public String addCar(@ModelAttribute("car") Car car) {
 //        carService.save(car);
         return "redirect:/car-added";
