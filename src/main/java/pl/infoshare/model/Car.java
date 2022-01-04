@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Car {
-    private int id;
+    private long id;
     private String registrationNumber;
     private String name;
     private boolean isFixed;
