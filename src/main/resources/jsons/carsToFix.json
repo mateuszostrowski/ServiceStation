@@ -1,18 +1,42 @@
 [
   {
-    "id": 1641316929987,
+    "id": 1641319353436,
     "registrationNumber": "L0001",
     "name": "Lambo",
     "isFixed": false,
-    "color": "BLUE",
-    "yearOfProduction": 1999
+    "color": "RED",
+    "yearOfProduction": "1999"
   },
   {
-    "id": 1641316950547,
-    "registrationNumber": "L0002",
+    "id": 1641319410600,
+    "registrationNumber": "L0001",
     "name": "Porsche",
     "isFixed": false,
     "color": "BLACK",
-    "yearOfProduction": 2000
+    "yearOfProduction": "2021"
+  },
+  {
+    "id": 1641319780879,
+    "registrationNumber": "L0002",
+    "name": "Jaguar",
+    "isFixed": false,
+    "color": "GRAY",
+    "yearOfProduction": "2005"
+  },
+  {
+    "id": 1641319951527,
+    "registrationNumber": "L0005",
+    "name": "Lambo",
+    "isFixed": false,
+    "color": "WHITE",
+    "yearOfProduction": "2021"
+  },
+  {
+    "id": 1641329803631,
+    "registrationNumber": "L0004",
+    "name": "Fiat Tipo",
+    "isFixed": false,
+    "color": "WHITE",
+    "yearOfProduction": "1998"
   }
 ]
