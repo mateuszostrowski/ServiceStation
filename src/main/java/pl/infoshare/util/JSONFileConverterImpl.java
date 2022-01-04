@@ -23,10 +23,9 @@ public class JSONFileConverterImpl implements JSONFileConverter {
         List<Car> cars = new ArrayList<>();
         try {
             JsonReader reader = new JsonReader(new FileReader(filePath));
-//            cars = gson.fromJson(reader, Car.class);
             cars = gson.fromJson(reader, new TypeToken<List<Car>>(){}.getType());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File " + filePath + " not found. New file created.");
         }
         return cars;
     }
