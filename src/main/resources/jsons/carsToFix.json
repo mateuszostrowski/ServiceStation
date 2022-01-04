@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "registrationNumber": "123",
+    "name": "Item 333",
+    "isFixed": false,
+    "color": "RED",
+    "yearOfProduction": 2021
+  },
+  {
+    "id": 1,
+    "registrationNumber": "L0001",
+    "name": "Lambo",
+    "isFixed": false,
+    "color": "WHITE",
+    "yearOfProduction": 1999
+  },
+  {
+    "id": 1,
+    "registrationNumber": "L0002",
+    "name": "Porsche",
+    "isFixed": false,
+    "color": "BLUE",
+    "yearOfProduction": 2018
+  }
+]

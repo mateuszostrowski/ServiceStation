@@ -33,7 +33,7 @@ public class CarController {
 
     @PostMapping(value = "/add-car")
     public String addCar(@ModelAttribute("car") Car car) {
-//        carService.save(car);
+        carService.save(car);
         return "redirect:/car-added";
     }
 

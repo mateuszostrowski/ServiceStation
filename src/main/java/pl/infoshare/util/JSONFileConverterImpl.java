@@ -2,6 +2,7 @@ package pl.infoshare.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import org.springframework.stereotype.Component;
 import pl.infoshare.model.Car;
@@ -22,7 +23,8 @@ public class JSONFileConverterImpl implements JSONFileConverter {
         List<Car> cars = new ArrayList<>();
         try {
             JsonReader reader = new JsonReader(new FileReader(filePath));
-            cars = gson.fromJson(reader, Car.class);
+//            cars = gson.fromJson(reader, Car.class);
+            cars = gson.fromJson(reader, new TypeToken<List<Car>>(){}.getType());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
