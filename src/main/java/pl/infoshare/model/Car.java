@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -24,4 +25,5 @@ public class Car {
     @NotEmpty(message = EMPTY_ERROR)
     @Size(min = 4, max = 4, message = WRONG_YEAR_ERROR)
     private String yearOfProduction;
+    private LocalDate inServiceSince;
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.infoshare.model.Car;
 import pl.infoshare.util.JSONFileConverterImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,6 +46,7 @@ public class CarRepositoryImpl implements CarRepository {
         List<Car> cars = getAllToFix();
         long newId = System.currentTimeMillis();
         car.setId(newId);
+        car.setInServiceSince(LocalDate.now());
         cars.add(car);
         converter.objectToJSON(cars, CARS_TO_FIX_FILEPATH);
     }

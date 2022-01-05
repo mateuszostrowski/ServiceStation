@@ -5,7 +5,12 @@
     "name": "Lambo",
     "isFixed": false,
     "color": "RED",
-    "yearOfProduction": "1999"
+    "yearOfProduction": "1999",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 3
+    }
   },
   {
     "id": 1641319410600,
@@ -13,7 +18,12 @@
     "name": "Porsche",
     "isFixed": false,
     "color": "BLACK",
-    "yearOfProduction": "2021"
+    "yearOfProduction": "2021",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 4
+    }
   },
   {
     "id": 1641319780879,
@@ -21,7 +31,12 @@
     "name": "Jaguar",
     "isFixed": false,
     "color": "GRAY",
-    "yearOfProduction": "2005"
+    "yearOfProduction": "2005",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 4
+    }
   },
   {
     "id": 1641319951527,
@@ -29,7 +44,12 @@
     "name": "Lambo",
     "isFixed": false,
     "color": "WHITE",
-    "yearOfProduction": "2021"
+    "yearOfProduction": "2021",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 4
+    }
   },
   {
     "id": 1641329803631,
@@ -37,6 +57,24 @@
     "name": "Fiat Tipo",
     "isFixed": false,
     "color": "WHITE",
-    "yearOfProduction": "1998"
+    "yearOfProduction": "1998",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 5
+    }
+  },
+  {
+    "id": 1641413113553,
+    "registrationNumber": "L0006",
+    "name": "Peugeot 106",
+    "isFixed": false,
+    "color": "GRAY",
+    "yearOfProduction": "2005",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 5
+    }
   }
 ]
