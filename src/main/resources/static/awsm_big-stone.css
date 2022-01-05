@@ -321,13 +321,13 @@ table td, table th{
     border-left:0;
 }
 table td:first-child, table th:first-child{
-    padding-left:0;
+    /*padding-left:0;*/
     background-image:linear-gradient(to right, #1b2d3e 50%, rgba(27, 45, 62, 0) 100%);
     background-size:2px 100%;
     background-repeat:no-repeat;
 }
 table td:last-child, table th:last-child{
-    padding-right:0;
+    /*padding-right:0;*/
     border-right:0;
     background-image:linear-gradient(to left, #1b2d3e 50%, rgba(27, 45, 62, 0) 100%);
     background-position:100% 0;

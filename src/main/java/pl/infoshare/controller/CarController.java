@@ -57,4 +57,11 @@ public class CarController {
         return "car-added";
     }
 
+    @GetMapping("/cars-to-fix")
+    public String carsToFix(Model model){
+        model.addAttribute("menuObjects", menuService.get());
+        model.addAttribute("cars", carService.getToFix());
+        return "cars-to-fix";
+    }
+
 }

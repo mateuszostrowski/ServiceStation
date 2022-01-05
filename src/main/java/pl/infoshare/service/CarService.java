@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
+import java.util.List;
+
 @Service
 public class CarService {
 
@@ -15,6 +17,10 @@ public class CarService {
 
     public void save(Car car) {
         carRepository.save(car);
+    }
+
+    public List<Car> getToFix() {
+        return carRepository.getAllToFix();
     }
 
 }
