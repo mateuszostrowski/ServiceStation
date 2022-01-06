@@ -33,17 +33,14 @@ public class CarController {
     }
 
     @GetMapping(value = "/add-car")
-    public String getCarForm(Model model) {
-        model.addAttribute("car", new Car());
-        model.addAttribute("menuObjects", menuService.get());
-        return "index";
+    public String getCarForm() {
+        return "redirect:/index";
     }
 
     @PostMapping(value = "/add-car")
-    public String addCar(@Valid @ModelAttribute("car") Car car, Errors errors, Model model) {
-        model.addAttribute("menuObjects", menuService.get());
+    public String addCar(@Valid @ModelAttribute("car") Car car, Errors errors) {
         if (errors.hasErrors()) {
-            return "index";
+            return "redirect:/index";
         }
         carService.save(car);
         return "redirect:/car-added";
@@ -64,14 +61,14 @@ public class CarController {
 
     @GetMapping("/fix-car/{id}")
     public String getCarToFix(@PathVariable ("id") long id) {
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @PostMapping("/fix-car/{id}")
-    public String fixCar(@PathVariable ("id") long id, Model model) {
+    public String fixCar(@PathVariable ("id") long id) {
         Optional<Car> car = carService.get(id);
         car.ifPresent(carService::fix);
-        return "redirect:/cars-to-fix";
+        return "redirect:/";
     }
 
 }
