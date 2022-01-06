@@ -5,6 +5,7 @@ import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -21,6 +22,14 @@ public class CarService {
 
     public List<Car> getToFix() {
         return carRepository.getAllToFix();
+    }
+
+    public void fix(Car car) {
+        car.setFixed(true);
+    }
+
+    public Optional<Car> get(long id) {
+        return carRepository.get(id);
     }
 
 }

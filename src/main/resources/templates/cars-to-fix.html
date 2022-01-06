@@ -22,7 +22,7 @@
                 <th scope="col" th:text="#{car.color}"></th>
                 <th scope="col" th:text="#{car.yearOfProduction}"></th>
                 <th scope="col" th:text="#{car.inServiceSince}"></th>
-                <th scope="col" ></th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -32,7 +32,13 @@
                 <td th:text="${car.color}"></td>
                 <td th:text="${car.yearOfProduction}"></td>
                 <td th:text="${car.inServiceSince}"></td>
-                <td><button type="submit" class="btn btn-light" th:text="#{button.repair}"></button></td>
+                <td>
+                    <form th:action="@{|/fix-car/${car.id}|}" th:method="post">
+                        <button type="submit" class="btn btn-light"
+                                th:text="#{button.repair}">
+                        </button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>

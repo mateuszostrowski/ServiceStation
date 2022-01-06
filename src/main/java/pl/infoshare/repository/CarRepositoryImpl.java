@@ -6,6 +6,7 @@ import pl.infoshare.model.Car;
 import pl.infoshare.util.JSONFileConverterImpl;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -52,7 +53,7 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
     @Override
-    public Optional<Car> get(int id) {
+    public Optional<Car> get(long id) {
         return getAll().stream().filter(i -> i.getId() == id).findFirst();
     }
 }

@@ -4,15 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.infoshare.model.Car;
 import pl.infoshare.service.CarService;
 import pl.infoshare.service.MenuService;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -62,6 +60,18 @@ public class CarController {
         model.addAttribute("menuObjects", menuService.get());
         model.addAttribute("cars", carService.getToFix());
         return "cars-to-fix";
+    }
+
+    @GetMapping("/fix-car/{id}")
+    public String getCarToFix(@PathVariable ("id") long id) {
+        return "redirect:/index";
+    }
+
+    @PostMapping("/fix-car/{id}")
+    public String fixCar(@PathVariable ("id") long id, Model model) {
+        Optional<Car> car = carService.get(id);
+        car.ifPresent(carService::fix);
+        return "redirect:/cars-to-fix";
     }
 
 }

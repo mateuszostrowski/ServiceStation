@@ -10,5 +10,5 @@ public interface CarRepository {
     List<Car> getAllToFix();
     List<Car> getAllFixed();
     void save(Car car);
-    Optional<Car> get(int id);
+    Optional<Car> get(long id);
 }
