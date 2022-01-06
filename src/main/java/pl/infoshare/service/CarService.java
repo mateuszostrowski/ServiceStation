@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,20 +17,31 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public void save(Car car) {
-        carRepository.save(car);
+    public void saveNew(Car car) {
+        List<Car> cars = carRepository.getAllToFix();
+        long newId = System.currentTimeMillis();
+        car.setId(newId);
+        car.setInServiceSince(LocalDate.now());
+        cars.add(car);
+        carRepository.saveToFix(cars);
     }
 
     public List<Car> getToFix() {
         return carRepository.getAllToFix();
     }
 
-    public void fix(Car car) {
-        car.setFixed(true);
-    }
+    public void fixCarWithId(long id) {
+        Optional<Car> car = carRepository.get(id);
+        List<Car> toFix = carRepository.getAllToFix();
+        List<Car> fixed = carRepository.getAllFixed();
 
-    public Optional<Car> get(long id) {
-        return carRepository.get(id);
+        if (car.isPresent()) {
+            Car toUpdate = car.get();
+            toFix.remove(toUpdate);
+            toUpdate.setFixed(true);
+            fixed.add(toUpdate);
+            carRepository.saveToFix(toFix);
+            carRepository.saveFixed(fixed);
+        }
     }
-
 }

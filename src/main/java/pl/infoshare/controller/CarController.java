@@ -10,7 +10,6 @@ import pl.infoshare.service.CarService;
 import pl.infoshare.service.MenuService;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -42,7 +41,7 @@ public class CarController {
         if (errors.hasErrors()) {
             return "redirect:/index";
         }
-        carService.save(car);
+        carService.saveNew(car);
         return "redirect:/car-added";
     }
 
@@ -53,21 +52,20 @@ public class CarController {
     }
 
     @GetMapping("/cars-to-fix")
-    public String carsToFix(Model model){
+    public String carsToFix(Model model) {
         model.addAttribute("menuObjects", menuService.get());
         model.addAttribute("cars", carService.getToFix());
         return "cars-to-fix";
     }
 
     @GetMapping("/fix-car/{id}")
-    public String getCarToFix(@PathVariable ("id") long id) {
+    public String getCarToFix(@PathVariable("id") long id) {
         return "redirect:/";
     }
 
     @PostMapping("/fix-car/{id}")
-    public String fixCar(@PathVariable ("id") long id) {
-        Optional<Car> car = carService.get(id);
-        car.ifPresent(carService::fix);
+    public String fixCar(@PathVariable("id") long id) {
+        carService.fixCarWithId(id);
         return "redirect:/";
     }
 

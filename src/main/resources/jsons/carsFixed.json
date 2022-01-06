@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1641319951527,
+    "registrationNumber": "L0005",
+    "name": "Lambo",
+    "isFixed": true,
+    "color": "WHITE",
+    "yearOfProduction": "2021",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 4
+    }
+  }
+]

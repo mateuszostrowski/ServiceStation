@@ -9,6 +9,7 @@ public interface CarRepository {
     List<Car> getAll();
     List<Car> getAllToFix();
     List<Car> getAllFixed();
-    void save(Car car);
+    void saveToFix(List<Car> cars);
+    void saveFixed(List<Car> cars);
     Optional<Car> get(long id);
 }

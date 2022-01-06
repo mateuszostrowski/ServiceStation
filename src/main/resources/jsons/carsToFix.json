@@ -39,19 +39,6 @@
     }
   },
   {
-    "id": 1641319951527,
-    "registrationNumber": "L0005",
-    "name": "Lambo",
-    "isFixed": false,
-    "color": "WHITE",
-    "yearOfProduction": "2021",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 4
-    }
-  },
-  {
     "id": 1641329803631,
     "registrationNumber": "L0004",
     "name": "Fiat Tipo",
