@@ -26,4 +26,5 @@ public class Car {
     @Size(min = 4, max = 4, message = WRONG_YEAR_ERROR)
     private String yearOfProduction;
     private LocalDate inServiceSince;
+    private LocalDate dateOfFix;
 }

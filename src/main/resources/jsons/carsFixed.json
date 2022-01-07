@@ -10,6 +10,47 @@
       "year": 2022,
       "month": 1,
       "day": 4
+    },
+    "dateOfFix": {
+      "year": 2022,
+      "month": 1,
+      "day": 6
+    }
+  },
+  {
+    "id": 1641329803631,
+    "registrationNumber": "L0004",
+    "name": "Fiat Tipo",
+    "isFixed": true,
+    "color": "WHITE",
+    "yearOfProduction": "1998",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 5
+    },
+    "dateOfFix": {
+      "year": 2022,
+      "month": 1,
+      "day": 6
+    }
+  },
+  {
+    "id": 1641413113553,
+    "registrationNumber": "L0006",
+    "name": "Peugeot 106",
+    "isFixed": true,
+    "color": "GRAY",
+    "yearOfProduction": "2005",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 5
+    },
+    "dateOfFix": {
+      "year": 2022,
+      "month": 1,
+      "day": 7
     }
   }
 ]

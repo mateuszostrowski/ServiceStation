@@ -39,9 +39,14 @@ public class CarService {
             Car toUpdate = car.get();
             toFix.remove(toUpdate);
             toUpdate.setFixed(true);
+            toUpdate.setDateOfFix(LocalDate.now());
             fixed.add(toUpdate);
             carRepository.saveToFix(toFix);
             carRepository.saveFixed(fixed);
         }
+    }
+
+    public List<Car> getFixed() {
+        return carRepository.getAllFixed();
     }
 }

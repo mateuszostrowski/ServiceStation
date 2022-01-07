@@ -69,4 +69,11 @@ public class CarController {
         return "redirect:/";
     }
 
+    @GetMapping("/cars-fixed")
+    public String carsFixed(Model model) {
+        model.addAttribute("menuObjects", menuService.get());
+        model.addAttribute("cars", carService.getFixed());
+        return "cars-fixed";
+    }
+
 }

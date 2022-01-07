@@ -13,7 +13,7 @@ public class MenuService {
                 new Menu(1, "Cars to fix", "cars-to-fix"),
                 new Menu(2, "Add new car", "/"),
                 new Menu(3, "Fix car", "fix-car"),
-                new Menu(4, "Fixed cars", "fixed-cars")
+                new Menu(4, "Fixed cars", "cars-fixed")
         );
     }
 }
