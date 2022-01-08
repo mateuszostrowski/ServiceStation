@@ -10,6 +10,7 @@ import pl.infoshare.service.CarService;
 import pl.infoshare.service.MenuService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -46,13 +47,13 @@ public class CarController {
     }
 
     @GetMapping("/car-added")
-    public String carAddedInfo(Model model) {
+    public String getCarAddedInfo(Model model) {
         model.addAttribute("menuObjects", menuService.get());
         return "car-added";
     }
 
     @GetMapping("/cars-to-fix")
-    public String carsToFix(Model model) {
+    public String getCarsToFix(Model model) {
         model.addAttribute("menuObjects", menuService.get());
         model.addAttribute("cars", carService.getToFix());
         return "cars-to-fix";
@@ -70,10 +71,30 @@ public class CarController {
     }
 
     @GetMapping("/cars-fixed")
-    public String carsFixed(Model model) {
+    public String getFixedCars(Model model) {
         model.addAttribute("menuObjects", menuService.get());
         model.addAttribute("cars", carService.getFixed());
         return "cars-fixed";
     }
 
+    @GetMapping("/fix-car")
+    public String findCarsToFix(Model model) {
+        model.addAttribute("menuObjects", menuService.get());
+        return "fix-car";
+    }
+    
+    @PostMapping("/find-car")
+    public String findCars() {
+        List<Car> found = carService.getMatched();
+        if (found.isEmpty()) {
+            return "redirect:/car-not-found";
+        }
+        return "redirect:/";
+    }
+
+    @GetMapping("/car-not-found")
+    public String getCarNotFoundInfo(Model model) {
+        model.addAttribute("menuObjects", menuService.get());
+        return "car-not-found";
+    }
 }

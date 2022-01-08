@@ -34,6 +34,11 @@ label {
     color: #1e7e34;
 }
 
+#notFoundInfo {
+    text-align: center;
+    color: red;
+}
+
 .error {
     color: red;
     font-size: 10px;

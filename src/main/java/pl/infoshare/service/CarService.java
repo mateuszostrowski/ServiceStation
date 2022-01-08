@@ -5,6 +5,7 @@ import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,5 +49,9 @@ public class CarService {
 
     public List<Car> getFixed() {
         return carRepository.getAllFixed();
+    }
+
+    public List<Car> getMatched() {
+        return new ArrayList<>();
     }
 }
