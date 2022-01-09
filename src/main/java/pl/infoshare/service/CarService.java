@@ -51,7 +51,8 @@ public class CarService {
         return carRepository.getAllFixed();
     }
 
-    public List<Car> getMatched() {
+    public List<Car> findMatch(String carDescription) {
+        String test = carDescription;
         return new ArrayList<>();
     }
 }

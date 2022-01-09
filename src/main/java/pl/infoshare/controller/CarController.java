@@ -82,10 +82,17 @@ public class CarController {
         model.addAttribute("menuObjects", menuService.get());
         return "fix-car";
     }
-    
+
+    @GetMapping("/find-car")
+    public String getFindCarForm(@RequestParam(value = "info") String info, Model model) {
+        model.addAttribute("info", info);
+        return "fix-car";
+    }
+
     @PostMapping("/find-car")
-    public String findCars() {
-        List<Car> found = carService.getMatched();
+    public String findCars(@RequestParam(value = "info") String info, Model model){
+        model.addAttribute("info", info);
+        List<Car> found = carService.findMatch(info);
         if (found.isEmpty()) {
             return "redirect:/car-not-found";
         }
