@@ -90,13 +90,19 @@ public class CarController {
     }
 
     @PostMapping("/find-car")
-    public String findCars(@RequestParam(value = "info") String info, Model model){
-        model.addAttribute("info", info);
+    public String findCars(@RequestParam(value = "info") String info){
         List<Car> found = carService.findMatch(info);
         if (found.isEmpty()) {
             return "redirect:/car-not-found";
         }
-        return "redirect:/";
+        return "redirect:/cars-to-fix/" + info;
+    }
+
+    @GetMapping("/cars-to-fix/{info}")
+    public String getMatchedCarsToFix(@PathVariable("info") String info, Model model) {
+        model.addAttribute("menuObjects", menuService.get());
+        model.addAttribute("cars", carService.findMatch(info));
+        return "cars-to-fix";
     }
 
     @GetMapping("/car-not-found")

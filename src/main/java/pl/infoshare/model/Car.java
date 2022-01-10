@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class Car {
     private static final String EMPTY_ERROR = "Cannot be empty";
     private static final String WRONG_YEAR_ERROR = "Must contain 4 digits";

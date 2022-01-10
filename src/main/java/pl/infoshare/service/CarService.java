@@ -5,9 +5,9 @@ import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CarService {
@@ -52,7 +52,9 @@ public class CarService {
     }
 
     public List<Car> findMatch(String carDescription) {
-        String test = carDescription;
-        return new ArrayList<>();
+        List<Car> allToFix = carRepository.getAllToFix();
+        return allToFix.stream()
+                .filter(c -> c.toString().contains(carDescription))
+                .collect(Collectors.toList());
     }
 }
