@@ -47,6 +47,8 @@ label {
 
 #cars {
     text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 #footer {
@@ -57,4 +59,13 @@ label {
 
 #footer h5 {
     margin-top: 5px;
+}
+
+.table thead th {
+    background-color: #1b2d3e;
+    color: #99c0c9;
+}
+
+.table th, .table td {
+    background-color: #99c0c9;
 }
