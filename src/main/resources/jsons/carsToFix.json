@@ -24,5 +24,18 @@
       "month": 1,
       "day": 4
     }
+  },
+  {
+    "id": 1641926738345,
+    "registrationNumber": "L0007",
+    "name": "Hyundai",
+    "isFixed": false,
+    "color": "WHITE",
+    "yearOfProduction": "2017",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 11
+    }
   }
 ]

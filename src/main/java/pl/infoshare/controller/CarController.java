@@ -38,9 +38,10 @@ public class CarController {
     }
 
     @PostMapping(value = "/add-car")
-    public String addCar(@Valid @ModelAttribute("car") Car car, Errors errors) {
+    public String addCar(@Valid @ModelAttribute("car") Car car, Errors errors, Model model) {
         if (errors.hasErrors()) {
-            return "redirect:/index";
+            model.addAttribute("menuObjects", menuService.get());
+            return "index";
         }
         carService.saveNew(car);
         return "redirect:/car-added";
