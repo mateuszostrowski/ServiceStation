@@ -48,3 +48,13 @@ label {
 #cars {
     text-align: center;
 }
+
+#footer {
+    text-align: center;
+    margin: 30px 30px 5px 30px;
+    border-top: #99c0c9 solid 1px;
+}
+
+#footer h5 {
+    margin-top: 5px;
+}
