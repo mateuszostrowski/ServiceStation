@@ -13,19 +13,6 @@
     }
   },
   {
-    "id": 1641319410600,
-    "registrationNumber": "L0001",
-    "name": "Porsche",
-    "isFixed": false,
-    "color": "BLACK",
-    "yearOfProduction": "2021",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 4
-    }
-  },
-  {
     "id": 1641319780879,
     "registrationNumber": "L0002",
     "name": "Jaguar",
