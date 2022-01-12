@@ -13,19 +13,6 @@
     }
   },
   {
-    "id": 1641319780879,
-    "registrationNumber": "L0002",
-    "name": "Jaguar",
-    "isFixed": false,
-    "color": "GRAY",
-    "yearOfProduction": "2005",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 4
-    }
-  },
-  {
     "id": 1641926738345,
     "registrationNumber": "L0007",
     "name": "Hyundai",
@@ -36,6 +23,19 @@
       "year": 2022,
       "month": 1,
       "day": 11
+    }
+  },
+  {
+    "id": 1641319780879,
+    "registrationNumber": "L0002",
+    "name": "Jaguar",
+    "isFixed": false,
+    "color": "GRAY",
+    "yearOfProduction": "2005",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 4
     }
   }
 ]

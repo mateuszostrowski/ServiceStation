@@ -5,6 +5,7 @@ import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepositoryImpl;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,7 +29,9 @@ public class CarService {
     }
 
     public List<Car> getToFix() {
-        return carRepository.getAllToFix();
+        return carRepository.getAllToFix().stream()
+                .sorted(Comparator.comparing(Car::getInServiceSince))
+                .collect(Collectors.toList());
     }
 
     public void fixCarWithId(long id) {
