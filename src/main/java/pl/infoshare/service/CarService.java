@@ -7,6 +7,7 @@ import pl.infoshare.repository.CarRepositoryImpl;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -57,7 +58,7 @@ public class CarService {
     public List<Car> findMatch(String carDescription) {
         List<Car> allToFix = carRepository.getAllToFix();
         return allToFix.stream()
-                .filter(c -> c.toString().contains(carDescription))
+                .filter(c -> c.toString().toLowerCase(Locale.ROOT).contains(carDescription.toLowerCase(Locale.ROOT)))
                 .collect(Collectors.toList());
     }
 }
