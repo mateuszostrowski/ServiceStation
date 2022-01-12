@@ -29,7 +29,7 @@
             <tr th:each="car : ${cars}">
                 <td th:text="${car.registrationNumber}"></td>
                 <td th:text="${car.name}"></td>
-                <td th:text="${car.color}"></td>
+                <td th:text="${car.color.description}"></td>
                 <td th:text="${car.yearOfProduction}"></td>
                 <td th:text="${car.inServiceSince}"></td>
                 <td>

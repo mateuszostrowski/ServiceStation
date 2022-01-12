@@ -37,5 +37,18 @@
       "month": 1,
       "day": 4
     }
+  },
+  {
+    "id": 1642011855915,
+    "registrationNumber": "LU 18332",
+    "name": "Volvo",
+    "isFixed": false,
+    "color": "BLUE",
+    "yearOfProduction": "2021",
+    "inServiceSince": {
+      "year": 2022,
+      "month": 1,
+      "day": 12
+    }
   }
 ]
