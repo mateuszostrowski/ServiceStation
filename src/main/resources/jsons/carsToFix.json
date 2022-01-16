@@ -1,54 +1,15 @@
 [
   {
-    "id": 1641319353436,
-    "registrationNumber": "L0001",
+    "id": 1642352660088,
+    "registrationNumber": "L0018",
     "name": "Lambo",
     "isFixed": false,
-    "color": "RED",
-    "yearOfProduction": "1999",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 3
-    }
-  },
-  {
-    "id": 1641926738345,
-    "registrationNumber": "L0007",
-    "name": "Hyundai",
-    "isFixed": false,
-    "color": "WHITE",
-    "yearOfProduction": "2017",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 11
-    }
-  },
-  {
-    "id": 1641319780879,
-    "registrationNumber": "L0002",
-    "name": "Jaguar",
-    "isFixed": false,
     "color": "GRAY",
-    "yearOfProduction": "2005",
+    "yearOfProduction": "2011",
     "inServiceSince": {
       "year": 2022,
       "month": 1,
-      "day": 4
-    }
-  },
-  {
-    "id": 1642011855915,
-    "registrationNumber": "LU 18332",
-    "name": "Volvo",
-    "isFixed": false,
-    "color": "BLUE",
-    "yearOfProduction": "2021",
-    "inServiceSince": {
-      "year": 2022,
-      "month": 1,
-      "day": 12
+      "day": 16
     }
   }
 ]

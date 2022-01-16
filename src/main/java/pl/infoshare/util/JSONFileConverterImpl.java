@@ -7,10 +7,7 @@ import com.google.gson.stream.JsonReader;
 import org.springframework.stereotype.Component;
 import pl.infoshare.model.Car;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +25,21 @@ public class JSONFileConverterImpl implements JSONFileConverter {
             System.out.println("File " + filePath + " not found. New file created.");
         }
         return cars;
+    }
+
+    @Override
+    public List<Car> allFilesFromFolderToObject(String folderPath) {
+        List<Car> allCars = new ArrayList<>();
+        File dir = new File(folderPath);
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                String filePath = file.getPath();
+                List<Car> cars = fileToObject(filePath);
+                allCars.addAll(cars);
+            }
+        }
+        return allCars;
     }
 
     @Override

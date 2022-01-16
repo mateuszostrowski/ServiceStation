@@ -2,7 +2,7 @@ package pl.infoshare.service;
 
 import org.springframework.stereotype.Service;
 import pl.infoshare.model.Car;
-import pl.infoshare.repository.CarRepositoryImpl;
+import pl.infoshare.repository.CarRepository;
 
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 @Service
 public class CarService {
 
-    private final CarRepositoryImpl carRepository;
+    private final CarRepository carRepository;
 
-    public CarService(CarRepositoryImpl carRepository) {
+    public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
 
@@ -37,17 +37,18 @@ public class CarService {
 
     public void fixCarWithId(long id) {
         Optional<Car> car = carRepository.get(id);
+        LocalDate dateOfFix = LocalDate.now();
         List<Car> toFix = carRepository.getAllToFix();
-        List<Car> fixed = carRepository.getAllFixed();
+        List<Car> fixed = carRepository.getAllFixedFromDate(dateOfFix);
 
         if (car.isPresent()) {
             Car toUpdate = car.get();
             toFix.remove(toUpdate);
             toUpdate.setFixed(true);
-            toUpdate.setDateOfFix(LocalDate.now());
+            toUpdate.setDateOfFix(dateOfFix);
             fixed.add(toUpdate);
             carRepository.saveToFix(toFix);
-            carRepository.saveFixed(fixed);
+            carRepository.saveFixed(fixed, dateOfFix);
         }
     }
 
