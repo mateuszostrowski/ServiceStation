@@ -36,19 +36,19 @@ public class CarService {
     }
 
     public void fixCarWithId(long id) {
-        Optional<Car> car = carRepository.get(id);
+        Optional<Car> car = carRepository.getById(id);
         LocalDate dateOfFix = LocalDate.now();
-        List<Car> toFix = carRepository.getAllToFix();
-        List<Car> fixed = carRepository.getAllFixedFromDate(dateOfFix);
+        List<Car> carsToFix = carRepository.getAllToFix();
+        List<Car> carsFixed = carRepository.getAllFixedFromDate(dateOfFix);
 
         if (car.isPresent()) {
-            Car toUpdate = car.get();
-            toFix.remove(toUpdate);
-            toUpdate.setFixed(true);
-            toUpdate.setDateOfFix(dateOfFix);
-            fixed.add(toUpdate);
-            carRepository.saveToFix(toFix);
-            carRepository.saveFixed(fixed, dateOfFix);
+            Car carToUpdate = car.get();
+            carsToFix.remove(carToUpdate);
+            carToUpdate.setFixed(true);
+            carToUpdate.setDateOfFix(dateOfFix);
+            carsFixed.add(carToUpdate);
+            carRepository.saveToFix(carsToFix);
+            carRepository.saveFixed(carsFixed, dateOfFix);
         }
     }
 

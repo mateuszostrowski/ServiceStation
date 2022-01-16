@@ -91,7 +91,7 @@ public class CarController {
     }
 
     @PostMapping("/find-car")
-    public String findCars(@RequestParam(value = "info") String info){
+    public String findCars(@RequestParam(value = "info") String info) {
         return "redirect:/cars-to-fix/" + info;
     }
 

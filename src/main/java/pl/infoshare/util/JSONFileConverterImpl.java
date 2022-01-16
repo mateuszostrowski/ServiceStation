@@ -15,12 +15,13 @@ import java.util.List;
 public class JSONFileConverterImpl implements JSONFileConverter {
 
     @Override
-    public List<Car> fileToObject(String filePath) {
+    public List<Car> convertFileToObject(String filePath) {
         Gson gson = new Gson();
         List<Car> cars = new ArrayList<>();
         try {
             JsonReader reader = new JsonReader(new FileReader(filePath));
-            cars = gson.fromJson(reader, new TypeToken<List<Car>>(){}.getType());
+            cars = gson.fromJson(reader, new TypeToken<List<Car>>() {
+            }.getType());
         } catch (FileNotFoundException e) {
             System.out.println("File " + filePath + " not found. New file created.");
         }
@@ -28,14 +29,14 @@ public class JSONFileConverterImpl implements JSONFileConverter {
     }
 
     @Override
-    public List<Car> allFilesFromFolderToObject(String folderPath) {
+    public List<Car> convertFilesFromFolderToObject(String folderPath) {
         List<Car> allCars = new ArrayList<>();
         File dir = new File(folderPath);
         File[] files = dir.listFiles();
         if (files != null) {
             for (File file : files) {
                 String filePath = file.getPath();
-                List<Car> cars = fileToObject(filePath);
+                List<Car> cars = convertFileToObject(filePath);
                 allCars.addAll(cars);
             }
         }
@@ -43,13 +44,12 @@ public class JSONFileConverterImpl implements JSONFileConverter {
     }
 
     @Override
-    public Gson objectToJSON(List<Car> cars, String filePath) {
+    public void convertObjectToJSON(List<Car> cars, String filePath) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(filePath)) {
             gson.toJson(cars, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return gson;
     }
 }
