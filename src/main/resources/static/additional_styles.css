@@ -1,0 +1,71 @@
+#appName {
+    text-align: center;
+    color: #99c0c9;
+}
+
+#mainContainer {
+    max-width: 1080px;
+    margin: auto;
+    background-color: #545b62;
+    padding-bottom: 10px;
+}
+
+#addCarForm {
+    margin: 5px 30px 5px 30px;
+    border: #99c0c9 solid 1px;
+    padding-bottom: 10px;
+}
+
+label {
+    padding-top: 5px;
+}
+
+.col {
+    text-align: center;
+}
+
+.col select {
+    margin: auto;
+    width: inherit;
+}
+
+#successInfo {
+    text-align: center;
+    color: #1e7e34;
+}
+
+#notFoundInfo {
+    text-align: center;
+    color: red;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+    margin: 0 0 0 auto;
+}
+
+#cars {
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#footer {
+    text-align: center;
+    margin: 30px 30px 5px 30px;
+    border-top: #99c0c9 solid 1px;
+}
+
+#footer h5 {
+    margin-top: 5px;
+}
+
+.table thead th {
+    background-color: #1b2d3e;
+    color: #99c0c9;
+}
+
+.table th, .table td {
+    background-color: #99c0c9;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/awsm_big-stone.css}">
+    <link rel="stylesheet" th:href="@{/additional_styles.css}">
+    <title th:text="#{app.name}"></title>
+</head>
+<body>
+<div id="mainContainer">
+    <div th:insert="menu.html :: menuBar"></div>
+    <div id="addCarForm">
+        <form th:action="@{/add-car}" th:object="${car}" method="post">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+                        <label th:for="registrationNumber" th:text="#{car.registrationNumber}"></label>
+                    </div>
+                    <div class="col">
+                        <label th:for="name" th:text="#{car.name}"></label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col">
+
+                        <input type="text" th:id="registrationNumber" th:field="*{registrationNumber}"/>
+                    </div>
+                    <div class="col">
+                        <input type="text" th:id="name" th:field="*{name}"/>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col error">
+                        <div th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"></div>
+                    </div>
+                    <div class="col error">
+                        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label th:for="color" th:text="#{car.color}"></label>
+                    </div>
+                    <div class="col">
+                        <label th:for="yearOfProduction" th:text="#{car.yearOfProduction}"></label>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col">
+                        <select th:id="color" th:field="*{color}">
+                            <option th:each="clr : ${T(pl.infoshare.model.Color).values()}"
+                                    th:value="${clr.name()}"
+                                    th:text="${clr.description}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="number" th:min="1900" th:max="3000" th:step="1" th:id="yearOfProduction" th:field="*{yearOfProduction}"/>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col error">
+                        <!--empty col-->
+                    </div>
+                    <div class="col error">
+                        <div th:if="${#fields.hasErrors('yearOfProduction')}" th:errors="*{yearOfProduction}"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button th:name="submit" type="submit" class="btn btn-outline-success"
+                                th:text="#{button.submit}"></button>
+                    </div>
+                    <div class="col">
+                        <button th:name="cancel" type="reset" class="btn btn-outline-danger"
+                                th:text="#{button.cancel}"></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div th:insert="footer.html :: footer"></div>
+</div>
+</body>
+</html>
+

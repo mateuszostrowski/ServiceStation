@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/awsm_big-stone.css}">
+    <link rel="stylesheet" th:href="@{/additional_styles.css}">
+    <title th:text="#{app.menu}"></title>
+</head>
+<body>
+<div th:fragment="menuBar">
+    <div id="mainContainer">
+        <a th:href="@{/}">
+            <h1 id="appName" th:text="#{app.name}"></h1>
+        </a>
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item" th:each="menuObject : ${menuObjects}">
+                <a class="nav-link active" th:text="${menuObject.name}" th:href="${menuObject.landingPage}"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
