@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### jsons ###
+src/main/resources/jsons/fixed/
