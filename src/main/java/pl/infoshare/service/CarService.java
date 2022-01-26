@@ -5,10 +5,7 @@ import pl.infoshare.model.Car;
 import pl.infoshare.repository.CarRepository;
 
 import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +19,9 @@ public class CarService {
 
     public void saveNew(Car car) {
         List<Car> cars = carRepository.getAllToFix();
+        if (cars == null) {
+            cars = new ArrayList<>();
+        }
         long newId = System.currentTimeMillis();
         car.setId(newId);
         car.setInServiceSince(LocalDate.now());
@@ -57,8 +57,7 @@ public class CarService {
     }
 
     public List<Car> findMatch(String carDescription) {
-        List<Car> allToFix = carRepository.getAllToFix();
-        return allToFix.stream()
+        return carRepository.getAllToFix().stream()
                 .filter(c -> c.toString().toLowerCase(Locale.ROOT).contains(carDescription.toLowerCase(Locale.ROOT)))
                 .collect(Collectors.toList());
     }

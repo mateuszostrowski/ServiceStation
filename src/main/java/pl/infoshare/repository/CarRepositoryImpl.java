@@ -1,6 +1,7 @@
 package pl.infoshare.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.infoshare.model.Car;
 import pl.infoshare.util.JSONFileConverter;
@@ -12,8 +13,10 @@ import java.util.Optional;
 @Repository
 public class CarRepositoryImpl implements CarRepository {
 
-    private static final String CARS_TO_FIX_FILEPATH_FILE = "src/main/resources/jsons/carsToFix.json";
-    private static final String CARS_FIXED_FILEPATH_FOLDER = "src/main/resources/jsons/fixed";
+    @Value("${path.carsToFixFile}")
+    private String CARS_TO_FIX_FILEPATH_FILE;
+    @Value("${path.carsFixedFolder}")
+    private String CARS_FIXED_FILEPATH_FOLDER;
 
     private final JSONFileConverter converter;
 

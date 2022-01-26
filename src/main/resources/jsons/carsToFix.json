@@ -1,15 +1,17 @@
 [
   {
-    "id": 1642352660088,
-    "registrationNumber": "L0018",
+    "id": 1643210537065,
+    "registrationNumber": "L0005",
     "name": "Lambo",
     "isFixed": false,
     "color": "GRAY",
-    "yearOfProduction": "2011",
+    "yearOfProduction": {
+      "year": 2005
+    },
     "inServiceSince": {
       "year": 2022,
       "month": 1,
-      "day": 16
+      "day": 26
     }
   }
 ]

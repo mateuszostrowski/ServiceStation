@@ -63,7 +63,7 @@
                         </select>
                     </div>
                     <div class="col">
-                        <input type="text" th:id="yearOfProduction" th:field="*{yearOfProduction}"/>
+                        <input type="number" th:min="1900" th:max="3000" th:step="1" th:id="yearOfProduction" th:field="*{yearOfProduction}"/>
                     </div>
 
                     <div class="w-100"></div>
